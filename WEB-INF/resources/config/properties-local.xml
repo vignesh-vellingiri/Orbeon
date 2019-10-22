@@ -1,0 +1,69 @@
+<!--
+    This file is an empty template for your own properties-local.xml file. Please follow the instructions here:
+
+    https://doc.orbeon.com/configuration/properties/
+-->
+
+<properties xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xmlns:oxf="http://www.orbeon.com/oxf/processors">
+
+
+<property as="xs:string" name="oxf.fr.detail.process.send.test.testForm" >
+    send(
+        uri        = "http://localhost:9090/dummy?docid=" + "123" ,
+        method     = "POST",
+        content    = "metadata"
+    )
+</property>
+
+<property as="xs:string"  name="oxf.fr.detail.process.save-draft.test.testForm">
+	save(query = "foo=bar&amp;title={//title}")
+    then success-message("save-success")
+    recover error-message("database-error")
+</property>
+
+<property as="xs:string" name="oxf.fr.detail.buttons.test.testForm">
+    send save-draft
+</property>
+
+
+<!-- Custom Button Name -->
+<property
+  as="xs:string"
+  name="oxf.fr.resource.test.testForm.en.buttons.send"
+  value="Submit Application"/>
+ 
+ <!-- Initial form Data -->
+ <property
+    as="xs:boolean"
+    name="oxf.fr.detail.new.service.enable.*.*"
+    value="true"/>
+
+<property
+    as="xs:string"
+    name="oxf.fr.detail.new.service.uri.*.*"
+    value="http://localhost:9090/records?name=er"/>
+  
+  <!-- Header driven Authentication -->
+  <!--<property
+    as="xs:string"
+    name="oxf.fr.authentication.method"
+    value="header"/> -->
+	
+	
+ <!-- Roles -->
+ <property
+     as="xs:string"
+     name="oxf.fr.authentication.method"
+     value="container"/>
+	 
+  <property
+     as="xs:string"
+     name="oxf.fr.authentication.container.roles"
+     value="formupdate role0"/>
+	 
+ <property
+     as="xs:string"
+     name="oxf.fr.authentication.container.roles.split"
+     value=",|\s+"/>
+  </properties>
