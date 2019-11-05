@@ -361,10 +361,10 @@
 		<auth-constraint>
             <role-name>formupdate</role-name>
 			<role-name>role0</role-name>
-        </auth-constraint>
+        </auth-constraint> 
     </security-constraint>
 	
-	<security-constraint>
+	<!--<security-constraint>
         <web-resource-collection>
             <web-resource-name>Form summary</web-resource-name>
 			<url-pattern>/fr/test/testForm/summary</url-pattern>
@@ -372,7 +372,7 @@
 		<auth-constraint>
             <role-name>formupdate</role-name>
         </auth-constraint>
-    </security-constraint>
+    </security-constraint> -->
     <!--<login-config>
         <auth-method>FORM</auth-method>
         <form-login-config>

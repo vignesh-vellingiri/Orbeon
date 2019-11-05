@@ -8,21 +8,21 @@
             xmlns:oxf="http://www.orbeon.com/oxf/processors">
 
 
-<property as="xs:string" name="oxf.fr.detail.process.send.test.testForm" >
+<property as="xs:string" name="oxf.fr.detail.process.send.demo.rightOfInfoForm" >
     send(
-        uri        = "http://localhost:9090/dummy?docid=" + "123" ,
+        uri        = "http://localhost:9090/api/v1/forms/unsecure/action?actionId=START_INSTANCE"  ,
         method     = "POST",
-        content    = "metadata"
+        content    = "xml"
     )
 </property>
 
-<property as="xs:string"  name="oxf.fr.detail.process.save-draft.test.testForm">
+<property as="xs:string"  name="oxf.fr.detail.process.save-draft.demo.rightOfInfoForm">
 	save(query = "foo=bar&amp;title={//title}")
     then success-message("save-success")
     recover error-message("database-error")
 </property>
 
-<property as="xs:string" name="oxf.fr.detail.buttons.test.testForm">
+<property as="xs:string" name="oxf.fr.detail.buttons.demo.rightOfInfoForm">
     send save-draft
 </property>
 
@@ -30,7 +30,7 @@
 <!-- Custom Button Name -->
 <property
   as="xs:string"
-  name="oxf.fr.resource.test.testForm.en.buttons.send"
+  name="oxf.fr.resource.demo.rightOfInfoForm.en.buttons.send"
   value="Submit Application"/>
  
  <!-- Initial form Data -->
@@ -42,7 +42,7 @@
 <property
     as="xs:string"
     name="oxf.fr.detail.new.service.uri.*.*"
-    value="http://localhost:9090/records?name=er"/>
+    value="http://localhost:9090/api/v1/forms/records?name=dummy"/>
   
   <!-- Header driven Authentication -->
   <!--<property
